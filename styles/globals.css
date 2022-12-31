@@ -1,0 +1,489 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+body{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: linear-gradient(90deg, rgba(174,227,238,1) 0%, rgba(70,119,252,1) 100%);
+  /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='1080' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1001%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(120%2c 186%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c606.312C111.278%2c616.609%2c210.234%2c527.855%2c287.101%2c446.737C354.302%2c375.82%2c370.539%2c275.961%2c401.004%2c183.133C427.995%2c100.89%2c461.203%2c20.903%2c455.193%2c-65.447C448.883%2c-156.107%2c421.972%2c-245.559%2c366.175%2c-317.292C308.669%2c-391.223%2c228.6%2c-446.087%2c138.692%2c-472.343C48.86%2c-498.576%2c-44.551%2c-482.715%2c-136.247%2c-464.014C-235.442%2c-443.784%2c-337.938%2c-425.304%2c-414.832%2c-359.454C-498.025%2c-288.209%2c-583.87%2c-192.959%2c-580.601%2c-83.478C-577.333%2c25.988%2c-460.153%2c91.44%2c-398.664%2c182.064C-349.331%2c254.772%2c-315.041%2c332.557%2c-254.872%2c396.588C-177.972%2c478.423%2c-111.819%2c595.965%2c0%2c606.312' fill='%232d94ff'%3e%3c/path%3e%3cpath d='M1440 1199.978C1559.389 1200.828 1666.357 1132.656 1762.7440000000001 1062.2 1854.787 994.919 1932.941 910.4449999999999 1978.857 806.088 2024.368 702.6510000000001 2020.739 589.554 2020.424 476.548 2020.059 345.826 2067.327 189.17200000000003 1976.873 94.79700000000003 1885.757-0.26900000000000546 1725.229 51.178 1594.873 32.549999999999955 1486.008 16.993000000000052 1378.264-40.346000000000004 1273.908-5.655999999999949 1170.57 28.69500000000005 1105.841 127.06099999999998 1043.003 216 985.238 297.759 940.511 387.049 926.428 486.15999999999997 912.361 585.159 931.071 683.059 963.1800000000001 777.756 998.239 881.154 1038.455 985.246 1120.195 1057.626 1209.3600000000001 1136.5810000000001 1320.905 1199.13 1440 1199.978' fill='%23c3e0ff'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1001'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"); */
+  /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1001%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(120%2c 186%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c606.312C111.278%2c616.609%2c210.234%2c527.855%2c287.101%2c446.737C354.302%2c375.82%2c370.539%2c275.961%2c401.004%2c183.133C427.995%2c100.89%2c461.203%2c20.903%2c455.193%2c-65.447C448.883%2c-156.107%2c421.972%2c-245.559%2c366.175%2c-317.292C308.669%2c-391.223%2c228.6%2c-446.087%2c138.692%2c-472.343C48.86%2c-498.576%2c-44.551%2c-482.715%2c-136.247%2c-464.014C-235.442%2c-443.784%2c-337.938%2c-425.304%2c-414.832%2c-359.454C-498.025%2c-288.209%2c-583.87%2c-192.959%2c-580.601%2c-83.478C-577.333%2c25.988%2c-460.153%2c91.44%2c-398.664%2c182.064C-349.331%2c254.772%2c-315.041%2c332.557%2c-254.872%2c396.588C-177.972%2c478.423%2c-111.819%2c595.965%2c0%2c606.312' fill='%232d94ff'%3e%3c/path%3e%3cpath d='M1440 1199.978C1559.389 1200.828 1666.357 1132.656 1762.7440000000001 1062.2 1854.787 994.919 1932.941 910.4449999999999 1978.857 806.088 2024.368 702.6510000000001 2020.739 589.554 2020.424 476.548 2020.059 345.826 2067.327 189.17200000000003 1976.873 94.79700000000003 1885.757-0.26900000000000546 1725.229 51.178 1594.873 32.549999999999955 1486.008 16.993000000000052 1378.264-40.346000000000004 1273.908-5.655999999999949 1170.57 28.69500000000005 1105.841 127.06099999999998 1043.003 216 985.238 297.759 940.511 387.049 926.428 486.15999999999997 912.361 585.159 931.071 683.059 963.1800000000001 777.756 998.239 881.154 1038.455 985.246 1120.195 1057.626 1209.3600000000001 1136.5810000000001 1320.905 1199.13 1440 1199.978' fill='%23c3e0ff'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1001'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"); */
+}
+
+body::-webkit-scrollbar{
+  width: 7px;
+  padding-top: 22px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: rgb(114, 170, 242);
+  border-radius: 5px;
+}
+
+.fadeIn {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+/* Componente Navbar */
+
+nav{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  background-color: transparent !important;
+  backdrop-filter: blur(9px);
+  z-index: 1;
+}
+
+nav .open-menu-nav{
+  background-color: transparent;
+  color: white;
+  display: none;
+}
+
+.MuiToolbar-root{
+  background-color: transparent !important;
+  backdrop-filter: blur(9px) !important;
+}
+
+nav .container-title{
+  width: 100%;
+}
+
+nav .container-navs a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding-right: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: color .3s ease-in-out;
+}
+
+nav .container-navs a:hover{
+  color: rgb(96, 59, 0);
+}
+
+nav .category-nav{
+  font-size: 17px;
+  color: white;
+  background-color: transparent;
+}
+
+.css-15bs40p-MuiInputBase-root-MuiInput-root:before{ /*ESTILOS DE MATERIAL*/
+  border-bottom : 1px solid white !important;
+}
+
+.css-15bs40p-MuiInputBase-root-MuiInput-root:after{  /*ESTILOS DE MATERIAL*/
+  border-bottom : 2px solid white !important;
+}
+
+
+
+
+/* Componente SideMenu */
+
+.css-1ab2xsx{
+  background-color: rgba(0, 0, 0, 0.116) !important;
+  backdrop-filter: blur(9px) !important;
+}
+
+/* Componente [slug] Icecream */
+
+.container-grid-img{
+  display: flex;
+  justify-content: center;
+}
+
+.container-form-icecream h1{
+  width: 100%;
+  color: white;
+  font-size: 45px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.container-grid-img img{
+  height: 70%;
+  border-radius: 5px;
+}
+
+/* Componente FormCustomer */
+
+.cardForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 5vh;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #00000066;
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 0;
+}
+
+.cardForm label{
+  color: white !important;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input{
+  z-index: 1;
+  color: rgb(15, 33, 58)!important;
+  border-bottom : 1px solid white !important;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input:after{
+  border-bottom : 1px solid rgb(208, 208, 208) !important;
+}
+
+/* Componente Ordenes */
+
+.container-table{
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #00000066 !important;
+  backdrop-filter: saturate(180%) blur(10px) !important;
+}
+
+.container-table a{
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  color: black ;
+  transition: all 0.3s ease;
+}
+
+.container-table a:hover{
+  background: rgb(199, 199, 199);
+}
+
+.btn-delete-order{
+  background: rgb(209, 3, 3) !important;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.btn-delete-order:hover{
+  background: rgb(161, 3, 3) !important;
+}
+
+.css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar p{
+  color: white;
+}
+
+.MuiTablePagination-actions button{
+  color: white !important;
+}
+
+/* Componente Footer */
+
+.footer_container{
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  gap: 20vh;
+  padding: 60px;
+  background-color: rgba(41, 79, 122, 0.404) !important;
+  backdrop-filter: blur(9px);
+  z-index: 1;
+}
+
+.footer_css{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer_css h2{
+  font-size: 30px;
+  color: rgb(34, 75, 130) !important;
+}
+
+.footer_css p{
+  font-size: 20px;
+  color: rgb(16, 36, 63);
+}
+
+.container_footer_title{
+  width: 10%;
+  margin-left: 100px;
+}
+
+.container_footer_title h2{
+  font-style: italic;
+  text-align: center;
+}
+
+.container_footer_title img{
+  object-fit: cover;
+}
+
+.container_footer_about{
+  width: 50%;
+  text-align: center;
+}
+
+.container_footer_location{
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+
+
+.container_footer_call{
+  text-align: center;
+  padding-right: 100px;
+  width: 30%;
+}
+
+.container_info_developer{
+  width: 100% !important;
+  height: 4vh;
+  padding: 5px;
+  align-items: center;
+  background-color: rgb(41, 79, 122) !important;
+  backdrop-filter: blur(9px);
+}
+
+.container_info_developer p{
+  font-size: 15px;
+  color: rgb(10, 23, 41);
+}
+
+
+/* CSS Responsive */
+
+@media screen and ( max-width: 1600px ) {
+
+  /* Componente Footer */
+
+  .footer_container{
+    height: 40vh;
+    padding: 30px;
+    gap: 10vh;
+  }
+
+  .footer_css p{
+    font-size: 15px;
+  }
+
+  .footer_css h2{
+    font-size: 25px;
+  }
+
+  .container_footer_about{
+    width: 60%;
+  }
+  
+  .container_footer_location{
+    width: 60%;
+  }
+
+  .container_footer_call{
+    width: 30%;
+  }
+
+}
+
+@media screen and ( max-width: 1200px ) {
+
+  /* Componente Footer */
+
+  .footer_container{
+    padding: 50px;
+  }
+
+  .container_footer_title{
+    margin-left: 0;
+  }
+
+  .container_footer_call{
+    padding-right: 0;
+  }
+
+  .container_footer_title{
+    width: 15%;
+  }
+
+}
+
+@media screen and ( max-width: 900px ) {
+
+  /* Componente FormCustomer */
+
+  .cardForm{
+    width: 70%;
+  }
+
+  /* Componente Footer */
+
+  .footer_container{
+    height: 30vh;
+  }
+
+  .footer_css p{
+    font-size: 10px;
+  }
+
+  .footer_css h2{
+    font-size: 20px;
+  }
+
+}
+
+@media screen and ( max-width: 600px ) {
+
+  .containers{
+    height: 100%;
+  } 
+
+  nav .open-menu-nav{
+    display: block;
+  }
+
+  /* Componente Navbar (input - search) */
+
+  .css-rn2toz-MuiInputBase-root-MuiInput-root::before{
+    border-bottom: rgb(255, 255, 255)!important;
+  }
+
+  .css-rn2toz-MuiInputBase-root-MuiInput-root::after{
+    border-bottom: rgb(255, 255, 255)!important;
+  }
+
+  .css-1x51dt5-MuiInputBase-input-MuiInput-input{
+    color: rgb(255, 255, 255)!important;
+  }
+
+  /* PageHome */
+
+  .page-home-container{
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .page-home-container .form-control-pagehome{
+    width: 50% !important;
+    margin-top: 30px;
+  }
+
+  /* CardPage */
+
+  .summary-card{
+    margin-top: 30px;
+  }
+
+  /* CardList */
+  .btn-remover-card{
+    color: black
+  }
+
+   /* Componente FormCustomer */
+
+   .cardForm{
+    width: 90%;
+  }
+
+  .cardForm-container h1{
+    font-size: 30px;
+  }
+
+  /* Componente Footer */
+
+  .footer_container{
+    height: auto;
+    flex-direction: column;
+    gap: 3vh;
+    padding: 25px;
+  }
+
+  .footer_css{
+    width: 70%;
+    padding-top: 10px;
+    border-top: 1px solid rgb(41, 79, 122);
+    margin: 0 auto;
+  }
+
+  .container_footer_title{
+    border-top: none;
+  }
+
+  .container_footer_title{
+    width: 10%;
+  }
+
+
+}
+
+@media screen and ( max-width: 420px ) {
+
+    /* IceCreamPage */
+
+    .container-form-icecream h1{
+      font-size: 30px;
+    }
+
+    .container-form-icecream h5{
+      font-size: 25px;
+    }
+
+    /* Componente FormCustomer */
+
+   .cardForm{
+    width: 90%;
+  }
+
+  .cardForm-container h1{
+    font-size: 25px;
+  }
+
+  /* Componente Footer */
+
+  .footer_css p{
+    font-size: 7px;
+  }
+
+  .footer_css h2{
+    font-size: 15px;
+  }
+
+  .container_footer_title{
+    width: 12%;
+  }
+
+}
+
+@media screen and ( max-width: 420px ) {
+
+  /* Componente FormCustomer */
+
+  .cardForm-container h1{
+    font-size: 20px;
+  }
+
+
+}

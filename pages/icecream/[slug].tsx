@@ -41,7 +41,7 @@ const IcecreamPage: NextPage<Props> = ({ icecreams }) => {
     return (
         <ShopLayout title={ icecreams.name } pageDescription={ `Helado cremoso sabor ${icecreams.name}` }>
 
-             <Grid container spacing={3} sx={{ mt: 15, pb: 10 }} height='auto' className='containers'>
+             <Grid container spacing={3} sx={{ mt: 15 }} height='auto' className='containers'>
             
                  <Grid item xs={12} sm={6} className='container-grid-img'>
                     {

@@ -5,17 +5,17 @@ import { Icecream } from "../models"
 
 export const getByIcecreamBySlug = async ( slug: string ): Promise<IIcecream | null> => {
 
-    await db.connect()
+    //await db.connect()
 
     const icecream = await Icecream.findOne({ slug }).lean();
 
-    await db.disconnect()
+    //await db.disconnect()
 
-    if( !icecream ){
-        return null;
-    }
+    // if( !icecream ){
+    //     return null;
+    // }
 
-    return JSON.parse( JSON.stringify(icecream) );
+    return icecream ? JSON.parse( JSON.stringify(icecream)) : null;
 
 }
 

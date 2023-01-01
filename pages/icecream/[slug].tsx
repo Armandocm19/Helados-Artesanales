@@ -6,7 +6,7 @@ import { Grid, Typography, Button } from "@mui/material";
 import { ICartIcecream, IIcecream } from "../../interfaces";
 import { ShopLayout } from '../../components/layout/Layout';
 import Image from "next/image";
-import { dbIcecream } from "../../database";
+import { db, dbIcecream } from "../../database";
 import { ItemCounter, FullScreenLoading } from "../../components/ui";
 import { CartContext } from '../../context';
 
@@ -90,7 +90,9 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const { slug = '' } = params as { slug: string }
+    await db.connect();
     const icecreams = await dbIcecream.getByIcecreamBySlug(slug);
+    await db.disconnect();
 
     if( !icecreams ){
         return {

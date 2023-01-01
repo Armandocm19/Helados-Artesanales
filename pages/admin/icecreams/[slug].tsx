@@ -11,7 +11,7 @@ import heladosApi from "../../../api/heladosApi";
 import { IIcecream } from "../../../interfaces";
 import { ShopLayout } from "../../../components/layout";
 import { Icecream } from "../../../models";
-import { dbIcecream } from "../../../database";
+import { db, dbIcecream } from "../../../database";
 
 interface formData {
     _id: string,
@@ -418,7 +418,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         delete tempIcecream._id; //Elimino el id por defecto que se crea en el nuevo producto
         icecream = tempIcecream;
     }else{
+        await db.connect();
         icecream = await dbIcecream.getByIcecreamBySlug( slug.toString() );
+        await db.disconnect();
     }
 
     if ( !icecream ) {

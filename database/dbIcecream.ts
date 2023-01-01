@@ -5,15 +5,7 @@ import { Icecream } from "../models"
 
 export const getByIcecreamBySlug = async ( slug: string ): Promise<IIcecream | null> => {
 
-    //await db.connect()
-
     const icecream = await Icecream.findOne({ slug }).lean();
-
-    //await db.disconnect()
-
-    // if( !icecream ){
-    //     return null;
-    // }
 
     return icecream ? JSON.parse( JSON.stringify(icecream)) : null;
 
@@ -37,17 +29,11 @@ export const getAllIcecreamsSlug = async (): Promise<ProductSlug[]> => {
 
 export const getIcecreamByTerm = async ( term: string ): Promise<IIcecream[]> => {
 
-    term = term.toString().toLocaleLowerCase();
-
-    await db.connect();
-
     const icecreams = await Icecream.find({
-        $text : { $search : term }
+        $text : { $search : term.toLocaleLowerCase() }
     })
     .select('name images price inStock slug -_id')
     .lean();
-
-    await db.disconnect()
 
     return icecreams;
 

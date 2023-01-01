@@ -1,7 +1,7 @@
 import { Typography, Box } from '@mui/material';
 import { GetServerSideProps, NextPage } from "next";
 import { ShopLayout } from "../../components/layout";
-import { dbIcecream } from '../../database';
+import { db, dbIcecream } from '../../database';
 import { IIcecream } from "../../interfaces"
 import { IcecreamList } from '../../components/sections/Icecreams';
 
@@ -53,6 +53,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
             }
             }
     }
+    await db.connect();
 
     let icecreams = await dbIcecream.getIcecreamByTerm(query);
     let foundIcecreams = icecreams.length > 0
@@ -60,6 +61,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     if( !foundIcecreams ){
         icecreams = await dbIcecream.getIcecreamByTerm('crema');
     }
+
+    await db.disconnect();
 
     return {
 

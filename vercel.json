@@ -1,5 +1,5 @@
 {
     "rewrites": [{
-    "source": "./pages/api/(.*)", "destination": "index.tsx"
+    "source": "./database/dbIcecream.ts", "destination": "./pages/search/[query].tsx"
     }]
     }

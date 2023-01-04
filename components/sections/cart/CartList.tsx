@@ -5,7 +5,6 @@ import { Box, Button, CardActionArea, CardMedia, Grid, Link, Typography } from '
 import { ItemCounter } from '../../ui';
 import { CartContext } from '../../../context/cart/CartContext';
 import { ICartIcecream, IOrderIcecream } from '../../../interfaces';
-import Cookie from 'js-cookie';
 
 interface Props {
     editable?: boolean;
@@ -22,10 +21,6 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
     }
 
     const productsToShow = products ? products : cart;
-
-    // console.log(products.forEach(item => {
-    //     console.log(item.quantity)
-    // }))
 
     return (
         <>

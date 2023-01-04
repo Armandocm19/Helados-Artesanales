@@ -13,9 +13,6 @@ interface Props {
 }
 
 const OrderPage: NextPage<Props> = ({ order }) => {
-    order.orderIcecreams.map( item => {
-        console.log(item)
-    } );
   return (
     <ShopLayout title='Resumen de la orden' pageDescription={`Orden ID: ${ order._id }`}>
     

@@ -11,7 +11,6 @@ export const FullScreenLoading = () => {
         height='calc(100vh - 160px)'
         >
             <CircularProgress thickness={4} sx={{ color: 'white' }} /> 
-            {/* "thickness" Grosor de la linea */}
     </Box>
   )
 }

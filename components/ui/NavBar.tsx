@@ -27,10 +27,6 @@ export const Navbar = () => {
     push(`/search/${ searchTerm }`);
   }
 
-//   const onLogout = () => {
-//     logout()
-//   }
-
   return (
             <AppBar sx={{ backgroundColor: 'transparent', position: 'fixed' }}>
             <Toolbar>

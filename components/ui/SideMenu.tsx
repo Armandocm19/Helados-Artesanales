@@ -73,7 +73,6 @@ export const SideMenu = () => {
                     {
                         user?.role === 'admin' && (
                             <>
-                                {/* <Divider sx={{ mt: 1, background: 'white' }} /> */}
                                 <ListItem>
                                     <ListItemIcon>
                                         <Typography variant='h2' sx={{ color: 'white' }}>Admin Panel</Typography>

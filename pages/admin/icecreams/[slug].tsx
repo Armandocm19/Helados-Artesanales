@@ -80,7 +80,6 @@ const IcecreamAdminPage: FC<Props> = ({ icecream, slug }) => {
     }
 
     const onFileSelected = async ({ target }: ChangeEvent<HTMLInputElement> ) => {
-        console.log(getValues('images'))
         if( !target.files || target.files.length === 0 ){
             return;
         }
@@ -143,8 +142,6 @@ const IcecreamAdminPage: FC<Props> = ({ icecream, slug }) => {
                 method: form._id ? 'PUT' : 'POST', // si tenemos un _id entonces actualizar, si no crear
                 data: form
             })
-
-            // console.log(form._id);
 
             if( form._id === undefined ) {
                 Swal.fire({

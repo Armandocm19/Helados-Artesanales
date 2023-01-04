@@ -12,7 +12,6 @@ interface Props {
 export const IcecreamCard: FC<Props> = ({ icecream }) => {
 
     const [isImageLoaded, setisImageLoaded] = useState(false)
-    console.log(icecream)
     
     return (
         <Grid 
@@ -52,7 +51,7 @@ export const IcecreamCard: FC<Props> = ({ icecream }) => {
 
             <Box sx={{ mt: 1, display: isImageLoaded ? 'block' : 'none' }} className='fadeIn'>
                 <Typography fontWeight={700} color='white'>{ icecream.name }</Typography>
-                <Typography fontWeight={400}>${ icecream.price }</Typography>
+                <Typography fontWeight={400}>₡{ icecream.price }</Typography>
             </Box>
 
         </Grid>

@@ -128,7 +128,7 @@ const SummaryPage: NextPage = () => {
 
                                 <Box display='flex' justifyContent='space-between'>
                                 <Typography variant='subtitle1'>Su información</Typography>
-                                    <NextLink href='/checkout/address' passHref>
+                                    <NextLink href='/checkout/customer' passHref>
                                         <Link underline='always'>
                                             Editar
                                         </Link>

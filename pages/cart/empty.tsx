@@ -12,7 +12,8 @@ const EmptyPage = () => {
             display='flex'
             justifyContent='center' 
             alignItems='center' 
-            sx={{ flexDirection: { xs: 'column', sm: 'row' }, mt: 45}}
+            height='100vh'
+            sx={{ flexDirection: { xs: 'column', sm: 'row' }}}
         >
             <RemoveShoppingCartOutlined sx={{ fontSize: 100, color: 'rgb(34, 75, 130)' }} />
             <Box display='flex' flexDirection='column' alignItems='center'>

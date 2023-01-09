@@ -40,7 +40,7 @@ const CartPage = () => {
     return(
         <ShopLayout title='Carrito - Helados' pageDescription='Carrito de compras de la tienda'>
 
-            <Box sx={{ mt: 15 }} height='auto' className='containers'>
+            <Box sx={{ mt: 15 }} height={ cart.length === 1 ? '50vh' : 'auto' } className='containers'>
                 <Typography variant='h1' component='h1' color='rgb(34, 75, 130)'>Carrito</Typography>
 
                 <Grid container>

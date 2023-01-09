@@ -6,13 +6,15 @@ import axios from 'axios';
 import { ICartIcecream, IOrder } from '../../interfaces';
 import {  CartContext,  cartReducer } from './'
 import heladosApi from '../../api/heladosApi';
+import { dbIcecream } from '../../database';
 
 export interface CartState {
     isLoaded: boolean;
     cart: ICartIcecream[];
     numberOfItems: number;
     subTotal: number;
-    total: number
+    total: number;
+    stockInDB: number[];
 }
 
 interface Props {
@@ -27,6 +29,7 @@ const  Cart_INITIAL_STATE:  CartState = {
     numberOfItems: 0,
     subTotal: 0,
     total: 0,
+    stockInDB: [],
 }
 
 type DataInfoCustomer = {
@@ -86,14 +89,14 @@ export const CartProvider: FC<Props> = ({ children }) => {
     }, [Cookie.get('Name')])
     
 
-    const addProductToCart = ( product: ICartIcecream ) => {
+    const addProductToCart = async ( product: ICartIcecream ) => {
 
         const productInCart = state.cart.some( p => p._id === product._id ); //Devuelve si el producto existe en el carrito
         if ( !productInCart ) return dispatch({ type: '[Cart] - Update or add products in cart', payload: [ ...state.cart, product ] });
 
         //Acumular items en el contador del carrito
 
-        const updatedProducts = state.cart.map( p => {
+        const updatedProducts = state.cart.map( (p) => {
 
             if( p._id !== product._id ) return p;
 
@@ -192,6 +195,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
             }
         }
     }
+
     return (
        < CartContext.Provider value={{
            ...state,
@@ -200,7 +204,8 @@ export const CartProvider: FC<Props> = ({ children }) => {
            updatedCartQuantity,
            removeCartIcecream,
            createOrder,
-           cancelOrder
+           cancelOrder,
+           //getArrayStockDB
       }}>
           { children }
         </ CartContext.Provider>

@@ -30,27 +30,42 @@ export const ItemCounter: FC<Props> = ({ currentValue, maxValue, updatedQuantity
     }
 
     return(
-        <Box
-            display='flex'
-            justifyContent='center'
-            alignItems='center'
-        >
-
-            <IconButton
-                onClick={ () => addOrRemove( -1 ) }
+        <>
+            <Box
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
             >
-                <RemoveCircleOutline sx={{ color: 'white', fontSize: 30 }} />
-            </IconButton>
+            
+                <IconButton
+                    onClick={ () => addOrRemove( -1 ) }
+                >
+                    <RemoveCircleOutline sx={{ color: 'white', fontSize: 30 }} />
+                </IconButton>
+            
+                <Typography sx={{ color: 'white', fontSize: 30 }}>{currentValue}</Typography>
+            
+                <IconButton
+                    onClick={ () => addOrRemove( +1 ) }
+                >
+                    <AddCircleOutline sx={{ color: 'white', fontSize: 30 }} />
+                </IconButton>
+            
+            </Box>
 
-            <Typography sx={{ color: 'white', fontSize: 30 }}>{currentValue}</Typography>
-
-            <IconButton
-                onClick={ () => addOrRemove( +1 ) }
+            <Box
+                display='flex'
+                justifyContent='center'
+                textAlign='center'
+                width='100%'
             >
-                <AddCircleOutline sx={{ color: 'white', fontSize: 30 }} />
-            </IconButton>
-
-        </Box>
+            {
+                currentValue === maxValue && (
+                    <Typography variant='h6' color='error' id='text-error-counter'>Solo tenemos {maxValue} disponibles</Typography>
+                )
+            }
+            </Box>
+        </>
     );
 
 }

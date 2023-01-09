@@ -23,6 +23,7 @@ const IcecreamPage: NextPage<Props> = ({ icecreams }) => {
         price: icecreams.price,
         slug: icecreams.slug,
         image: icecreams.images,
+        stock: icecreams.inStock,
         quantity: 1
     })
 
@@ -32,10 +33,10 @@ const IcecreamPage: NextPage<Props> = ({ icecreams }) => {
         setItemCounteValue(value)
     }
 
-    const addProuctCart = ( value: number ) => {
+    const addProuctCart = ( value: number, stock: string ) => {
         tempCartIcecream.quantity = value;
         updatedCartQuantity(tempCartIcecream);
-        addProductToCart(tempCartIcecream);
+        addProductToCart(tempCartIcecream)
     }
 
     return (
@@ -63,7 +64,7 @@ const IcecreamPage: NextPage<Props> = ({ icecreams }) => {
                      <Typography color='error'>
                             { ItemCounteValue === icecreams.inStock && `Solo tenemos ${icecreams.inStock} disponible en este momento`}
                      </Typography>
-                     <Button onClick={ () => addProuctCart(ItemCounteValue) } variant="outlined" sx={{ width: '50%', mt: 3 }}>Agregar al carrito</Button>
+                     <Button onClick={ () => addProuctCart(ItemCounteValue, icecreams.slug) } variant="outlined" sx={{ width: '50%', mt: 3 }}>Agregar al carrito</Button>
                  </Grid>
             
              </Grid>

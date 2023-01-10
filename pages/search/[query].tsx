@@ -24,9 +24,10 @@ const SearchPage: NextPage<Props> = ({ icecreams, foundIcecreams, query }) => {
                     ? <Typography variant='h2' sx={{ mb: 1, mt: 1}} color='white' textTransform='capitalize'>Resultado de búsqueda de: <strong style={{ color: 'rgb(34, 75, 130)' }}>{ query }</strong></Typography>
                     : (
                         <>
-                            <Box display='flex'>
-                                <Typography variant='h2' sx={{ mb: 1 }} color='white'>No encontramos ningún producto relacionado con:</Typography>
-                                <Typography variant='h2' sx={{ ml: 1 }} color="primary" textTransform='capitalize'><strong>{ query }</strong></Typography>
+                            <Box display='flex' sx={{ mt: 2 }}>
+                                <Typography variant='h2' sx={{ mb: 1 }} color='white'>
+                                    No encontramos ningún producto relacionado con: <strong style={{ color: 'rgb(34, 75, 130)' }}>{ query }</strong> 
+                                </Typography>
                             </Box>
                             <Typography variant='h1' component='h1' sx={{ mt: 5, color: 'rgb(34, 75, 130)' }} >Helados que te pueden interesar: </Typography>
                         </>

@@ -1,6 +1,5 @@
 import { createContext } from 'react';
 import { ICartIcecream } from '../../interfaces';
-import { IOrder } from '../../interfaces/order';
 
 interface ContextProps {
     isLoaded: boolean;

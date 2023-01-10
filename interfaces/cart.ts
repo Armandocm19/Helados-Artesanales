@@ -6,5 +6,6 @@ export interface ICartIcecream {
     price: number;
     slug: string;
     image: string;
+    stock?: number,
     quantity: number;
 }

@@ -18,6 +18,10 @@ export const FormCustomer: FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
     const { push } = useRouter()
     const { cart } = useContext(CartContext)
+    const infoCustomer = {
+        name: Cookie.get('Name'),
+        lastname: Cookie.get('LastName')
+    }
 
     useEffect(() => {
       
@@ -36,7 +40,7 @@ export const FormCustomer: FC = () => {
         push('/checkout/summary');
 
     }
-
+    console.log(cart)
 
     return (
         <>
@@ -50,7 +54,8 @@ export const FormCustomer: FC = () => {
                     id="standard-basic" 
                     label="Nombre" 
                     variant="standard" 
-                    color='info' 
+                    color='info'
+                    value={infoCustomer.name}
                     sx={{ width: '80%', margin: '0 auto' }}
                     { 
                         ...register('name', {
@@ -67,6 +72,7 @@ export const FormCustomer: FC = () => {
                     label="Apellido" 
                     variant="standard" 
                     color='info' 
+                    value={infoCustomer.lastname}
                     sx={{ width: '80%', margin: '0 auto', mt: 5 }}
                     { 
                         ...register('lastname', {

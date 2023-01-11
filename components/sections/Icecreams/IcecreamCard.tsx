@@ -15,11 +15,9 @@ export const IcecreamCard: FC<Props> = ({ icecream }) => {
     
     return (
         <Grid 
-        item
-        xl={3} 
-        md={4}
-        sm={6} 
-        xs={12} 
+        item 
+        xs={6} 
+        md={4} 
         sx={{ zIndex: 0 }}
         >
             <Card>
@@ -37,7 +35,7 @@ export const IcecreamCard: FC<Props> = ({ icecream }) => {
                         }
                         <CardMedia 
                             component='img'
-                            className="fadeIn"
+                            className="fadeIn card-media"
                             image={ icecream.images }
                             alt={ icecream.name }
                             width={300}

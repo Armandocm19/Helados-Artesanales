@@ -408,6 +408,10 @@ nav .category-nav{
     color: black
   }
 
+  .card-media{
+    height: 300px !important;
+  }
+
    /* Componente FormCustomer */
 
    .cardForm{
@@ -464,6 +468,12 @@ nav .category-nav{
 }
 
 @media screen and ( max-width: 420px ) {
+
+    /* Componente CartList */
+    
+    .card-media{
+      height: 200px !important;
+    }
 
     /* IceCreamPage */
 

@@ -475,6 +475,12 @@ nav .category-nav{
       height: 200px !important;
     }
 
+    .chip-container{
+      width: 90%;
+      left: 3px;
+      font-size: 9px;
+    }
+
     /* IceCreamPage */
 
     .container-form-icecream h1{

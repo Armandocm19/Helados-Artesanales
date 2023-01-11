@@ -28,6 +28,7 @@ export const IcecreamCard: FC<Props> = ({ icecream }) => {
                             (icecream.inStock === 0) && (
                             <Chip 
                             color="primary"
+                            className="chip-container"
                             label="No hay disponibles"
                             sx={{ position: 'absolute', zIndex: 99, top: '10px', left: '10px' }}
                             />

@@ -61,9 +61,6 @@ const IcecreamPage: NextPage<Props> = ({ icecreams }) => {
             
                      <Typography variant="h5" fontWeight={700} sx={{ display: 'flex', justifyContent: 'center', mt: 5, fontSize: 35, color: 'rgb(34, 75, 130)' }}>Indique cuántos desea:</Typography>
                      <ItemCounter currentValue={ItemCounteValue} maxValue={icecreams.inStock} updatedQuantity={ (value : number) => updatedQuantity(value) } />
-                     <Typography color='error'>
-                            { ItemCounteValue === icecreams.inStock && `Solo tenemos ${icecreams.inStock} disponible en este momento`}
-                     </Typography>
                      <Button onClick={ () => addProuctCart(ItemCounteValue, icecreams.slug) } variant="outlined" sx={{ width: '50%', mt: 3 }}>Agregar al carrito</Button>
                  </Grid>
             

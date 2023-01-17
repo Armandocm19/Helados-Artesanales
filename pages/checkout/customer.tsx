@@ -12,7 +12,7 @@ const CustomerInformationPage: NextPage = () => {
     return (
         <FormCustomerLayout title="Información del cliente" pageDescription="Aqui el cliente colocará su información para el pedido">
 
-            <Box sx={{ mt: 15 }} height='100vh' className='containers cardForm-container'>
+            <Box sx={{ mt: 15 }} height='100%' className='containers cardForm-container'>
                 <FormCustomer />   
             </Box>
 

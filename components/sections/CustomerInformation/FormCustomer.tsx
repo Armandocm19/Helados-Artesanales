@@ -2,7 +2,7 @@ import { FC, useContext, useEffect } from 'react';
 
 import { useForm } from 'react-hook-form';
 import Cookie from 'js-cookie'
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Typography } from '@mui/material';
 import { CartContext } from '../../../context';
 import { useRouter } from 'next/router';
 
@@ -40,11 +40,11 @@ export const FormCustomer: FC = () => {
         push('/checkout/summary');
 
     }
-    console.log(cart)
 
     return (
         <>
-        
+
+            <Typography width='100%' variant="h1" component='h1' sx={{ display: 'flex', justifyContent: 'center', color: 'white', pt: 10, fontSize: 45 }}>Información para el pedido</Typography>  
             <form
                 onSubmit={ handleSubmit(onSaveForm) } 
                 noValidate

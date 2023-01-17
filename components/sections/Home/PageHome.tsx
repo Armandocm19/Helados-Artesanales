@@ -37,7 +37,6 @@ export const PageHome: FC = () => {
 
           <Box display='flex' justifyContent='space-between' className='page-home-container'>
             <Typography variant="h2">Nuestros sabores:</Typography>
-            
             <div style={{ width: '20%' }} className='form-control-pagehome'>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Filtro por precio(₡)</InputLabel>
@@ -53,6 +52,7 @@ export const PageHome: FC = () => {
                       <MenuItem value={'800'}>800</MenuItem>
                   </Select>
                 </FormControl>
+                <h4 style={{ color: 'white', marginTop: 5 }}>Sinpe: 86818261</h4>
             </div>
           </Box>
           

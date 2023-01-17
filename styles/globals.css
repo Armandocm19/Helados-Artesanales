@@ -434,11 +434,21 @@ nav .category-nav{
 
    /* Componente FormCustomer */
 
+   .cardForm-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 0 !important;
+   }
+
    .cardForm{
     width: 90%;
   }
 
   .cardForm-container h1{
+    text-align: center;
     font-size: 30px;
   }
 

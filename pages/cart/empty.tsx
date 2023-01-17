@@ -2,12 +2,12 @@ import NextLink from 'next/link'
 
 import { RemoveShoppingCartOutlined } from "@mui/icons-material"
 import { Box, Link, Typography } from "@mui/material"
-import { ShopLayout } from '../../components/layout'
+import { FormCustomerLayout, ShopLayout } from '../../components/layout'
 
 
 const EmptyPage = () => {
   return (
-    <ShopLayout title="Carrito vacío" pageDescription="No hay articulos en el carrito">
+    <FormCustomerLayout title="Carrito vacío" pageDescription="No hay articulos en el carrito">
         <Box
             display='flex'
             justifyContent='center' 
@@ -15,7 +15,7 @@ const EmptyPage = () => {
             height='auto'
             sx={{ flexDirection: { xs: 'column', sm: 'row' }}}
         >
-            <RemoveShoppingCartOutlined sx={{ fontSize: 100, color: 'rgb(34, 75, 130)' }} />
+            <RemoveShoppingCartOutlined sx={{ fontSize: 100, color: 'rgb(34, 75, 130)', mt: 20 }} />
             <Box display='flex' flexDirection='column' alignItems='center'>
                 <Typography color='rgb(34, 75, 130)'>Su carrito está vacío</Typography>
                 <NextLink href='/' passHref>
@@ -25,7 +25,7 @@ const EmptyPage = () => {
                 </NextLink>
             </Box>
         </Box>
-    </ShopLayout>
+    </FormCustomerLayout>
   )
 }
 
